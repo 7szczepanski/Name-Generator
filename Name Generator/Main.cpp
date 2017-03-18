@@ -1,10 +1,11 @@
 #include <SFML/Graphics.hpp>
-
+int width = 800;
+int height = 800;
 int main()
 {
-	sf::RenderWindow window(sf::VideoMode(200, 200), "SFML works!");
-	sf::CircleShape shape(100.f);
-	shape.setFillColor(sf::Color::Green);
+	sf::RenderWindow window(sf::VideoMode(width, height), "SFML works!");
+	sf::RectangleShape background(Vector2f(width, height));
+	background.setFillColor(Color(51, 51, 51));
 
 	while (window.isOpen())
 	{
@@ -16,7 +17,8 @@ int main()
 		}
 
 		window.clear();
-		window.draw(shape);
+		window.draw(background);
+
 		window.display();
 	}
 
